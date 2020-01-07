@@ -1,5 +1,5 @@
-const {app} = require('electron');
-const ProgressBar = require('electron-progressbar');
+const { app } = require("electron");
+const ProgressBar = require("../../source/index");
 
 app.on('ready', function() {
 	var progressBar = new ProgressBar({
