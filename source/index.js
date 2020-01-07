@@ -32,13 +32,14 @@ class ProgressBar {
       classes: {
         text: [],
         detail: [],
-				bar: [],
-				value: []
+        bar: [],
+        value: []
       },
 
       browserWindow: {
         parent: null,
         modal: true,
+        show: true,
         resizable: false,
         closable: false,
         minimizable: false,
@@ -154,6 +155,13 @@ class ProgressBar {
   set detail(detail) {
     this._options.detail = detail;
     this._window.webContents.send("SET_DETAIL", detail);
+  }
+
+  show() {
+    this._window.show();
+  }
+  hide() {
+    this._window.hide();
   }
 
   getOptions() {
@@ -296,8 +304,8 @@ class ProgressBar {
         ? this._options.cssFiles
         : [path.join(__dirname, "renderer.css")]
       ).map(cssfile => path.relative(__dirname, cssfile).replace(/\\/g, "/"));
-		});
-		
+    });
+
     this._window.webContents.on("did-finish-load", () => {
       if (this._options.text !== null) {
         this.text = this._options.text;
