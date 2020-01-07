@@ -44,6 +44,7 @@ class ProgressBar {
         closable: false,
         minimizable: false,
         maximizable: false,
+        frame: false,
         width: 500,
         height: 170,
         webPreferences: {
@@ -294,7 +295,6 @@ class ProgressBar {
 
       this._updateTaskbarProgress();
     });
-    this._window.removeMenu();
     this._window.loadURL(
       url.pathToFileURL(path.join(__dirname, "renderer.html")).href
     );
