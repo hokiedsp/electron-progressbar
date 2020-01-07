@@ -25,10 +25,13 @@
   },
   "homepage": "https://github.com/AndersonMamede/electron-progressbar",
   "devDependencies": {
-    "electron": "^1.7.5"
+    "electron": "latest"
   },
   "dependencies": {
-    "extend": "^3.0.1"
+    "extend": "latest"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "scripts": {
+    "test": "electron ./examples/1-indeterminate-basic/index.js"
+  }
 }
