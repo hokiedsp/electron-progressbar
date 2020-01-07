@@ -294,7 +294,7 @@ class ProgressBar {
 
       this._updateTaskbarProgress();
     });
-
+    this._window.removeMenu();
     this._window.loadURL(
       url.pathToFileURL(path.join(__dirname, "renderer.html")).href
     );
